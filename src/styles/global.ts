@@ -18,15 +18,17 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url('./assets/bg.png') no-repeat;
+    background-size: cover;
   }
 
   body, input, button, span {
-    font: 1rem Morn;
-    color: #f1f1f1;
+    font: 1rem Desigers;
+    color: #feee03;
   }
 
   strong {
-    color: #f1f1f1;
+    color: #feee03;
   }
 
   html, body, #root, #root>div {
