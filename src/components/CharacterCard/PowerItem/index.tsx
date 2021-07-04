@@ -1,16 +1,18 @@
+import { Power } from '../../../contexts/CharacterContext';
 import { Container } from './styles';
 
-export function PowerItem() {
+interface PowerItemProps {
+  power: Power;
+}
+
+export function PowerItem({ power }: PowerItemProps): JSX.Element {
   return (
     <Container>
       <div>
-        <img
-          src="https://psychonauts-api.herokuapp.com/images/api/clairvoyance.png"
-          alt="Power"
-        />
+        <img src={power.img} alt="Power" />
         <div>
-          <strong>clairvoyance</strong>
-          <span>Allows the user to see through the minds of others.</span>
+          <strong>{power.name}</strong>
+          <span>{power.description}</span>
         </div>
       </div>
     </Container>

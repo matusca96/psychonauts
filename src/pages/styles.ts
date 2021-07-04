@@ -55,5 +55,32 @@ export const MyFavoritesContainer = styled.div`
   flex: 1;
   height: 100%;
   margin-left: 2rem;
+  padding-bottom: 1rem;
   border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  strong {
+    font-size: 2.5rem;
+    letter-spacing: 0.25rem;
+
+    display: block;
+    padding: 1rem;
+  }
+
+  div {
+    overflow-y: auto;
+    padding: 0 1rem;
+
+    ul {
+      list-style: none;
+      overflow-y: auto;
+
+      li + li {
+        margin-top: 1.5rem;
+      }
+    }
+  }
 `;

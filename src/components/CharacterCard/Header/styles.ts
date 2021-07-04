@@ -1,24 +1,32 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+interface HeaderProps {
+  avatar: string;
+  gender: string;
+}
+
+export const Container = styled.header<HeaderProps>`
   display: flex;
   align-items: center;
 
-  padding: 0 1rem;
+  padding: 0 2rem;
 
   div {
     width: 10rem;
+    height: 10rem;
+
+    background: url(${({ avatar }) => avatar});
+    background-position: 90% 10%;
+    background-size: cover;
+    border-radius: 50%;
+
     position: relative;
 
-    img {
-      max-width: 100%;
-      border-radius: 50%;
-    }
-
     aside {
+      z-index: 2;
       position: absolute;
       top: 0;
-      right: 5%;
+      right: 0%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -27,8 +35,11 @@ export const Container = styled.header`
       border-radius: 50%;
       font-size: 1.5rem;
 
-      background: #304ab3;
-      color: #f1f1f1;
+      background: ${({ gender }) =>
+        gender === 'male'
+          ? 'rgba(175, 255, 248, 0.8)'
+          : 'rgba(246, 169, 230, 0.8)'};
+      color: #242424;
     }
   }
 

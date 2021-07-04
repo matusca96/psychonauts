@@ -27,5 +27,10 @@ export const Container = styled.header`
     &:active {
       filter: opacity(0.6);
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      filter: opacity(0.75);
+    }
   }
 `;

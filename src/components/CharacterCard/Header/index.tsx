@@ -1,20 +1,18 @@
 import { GiMale, GiFemale } from 'react-icons/gi';
 import { FaStar, FaRegStar } from 'react-icons/fa';
+import { useContext } from 'react';
 import { Container } from './styles';
+import { CharacterContext } from '../../../contexts/CharacterContext';
 
 export function Header(): JSX.Element {
+  const { character } = useContext(CharacterContext);
+
   return (
-    <Container>
+    <Container avatar={character.img} gender={character.gender}>
       <div>
-        <img
-          src="https://psychonauts-api.herokuapp.com/images/api/characters/razputin-aquato.png"
-          alt="Avatar"
-        />
-        <aside>
-          <GiMale />
-        </aside>
+        <aside>{character.gender === 'male' ? <GiMale /> : <GiFemale />}</aside>
       </div>
-      <strong>razputin aquato</strong>
+      <strong>{character.name}</strong>
 
       <button type="button">
         <FaRegStar />

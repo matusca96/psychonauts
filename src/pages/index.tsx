@@ -1,4 +1,5 @@
 import { CharacterCard } from '../components/CharacterCard';
+import { FavoriteCard } from '../components/FavoriteCard';
 import { Input } from '../components/Input';
 import { Logo } from '../components/Logo';
 import { SearchField } from '../components/SearchField';
@@ -22,7 +23,14 @@ export default function Home(): JSX.Element {
           <hr />
           <CharacterCard />
         </SearchCharacterContainer>
-        <MyFavoritesContainer />
+        <MyFavoritesContainer>
+          <strong>Meus favoritos</strong>
+          <div>
+            <ul>
+              <FavoriteCard />
+            </ul>
+          </div>
+        </MyFavoritesContainer>
       </Content>
     </Container>
   );

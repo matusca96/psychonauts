@@ -44,12 +44,12 @@ export default createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb{
-    background: linear-gradient(13deg, #060D0E 21%,#142C30 69%);
+    background: linear-gradient(13deg, #142C30 21%,#142C30 69%);
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-track{
-    background: #142C30;
+    background: #060D0E;
     border-radius: 10px;
   }
 

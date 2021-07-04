@@ -29,7 +29,13 @@
     "no-param-reassign": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "no-underscore-dangle": "off",
+    "no-plusplus": [
+      2,
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
     "react/prop-types": [
       "off"
     ],

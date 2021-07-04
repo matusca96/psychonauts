@@ -15,6 +15,7 @@ export const Container = styled.li`
 
     img {
       width: 3rem;
+      border-radius: 50%;
     }
 
     div {

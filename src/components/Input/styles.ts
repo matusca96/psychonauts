@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  isFocused: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   flex: 1;
 
   display: flex;
@@ -10,6 +14,7 @@ export const Container = styled.div`
   border: 2px solid #060d0e;
   border-radius: 0.5rem;
   background: #060d0e;
+  transition: border 0.25s ease;
 
   &:focus-within {
     border: 2px solid #feee03;
@@ -17,7 +22,8 @@ export const Container = styled.div`
 
   & > svg {
     font-size: 2rem;
-    color: #142c30;
+    transition: color 0.25s ease;
+    color: ${({ isFocused }) => (isFocused ? '#feee03' : '#142c30')};
   }
 
   input {
@@ -58,7 +64,7 @@ export const Container = styled.div`
     }
 
     svg {
-      font-size: 2rem;
+      font-size: 1.75rem;
       color: #142c30;
       transition: all 0.25s ease;
     }
