@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-y: auto;
 `;
 
 export const Header = styled.header`
@@ -23,6 +24,7 @@ export const Content = styled.div`
   max-width: 1480px;
   margin: 0 auto;
   padding: 0 1rem 2rem;
+  overflow-y: auto;
 
   display: flex;
 `;
@@ -34,30 +36,16 @@ export const SearchCharacterContainer = styled.div`
   height: 100%;
   border-radius: 1rem;
 
-  header {
-    display: flex;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 
-    & > button {
-      margin-left: 1rem;
-      padding: 0.75rem;
-
-      display: flex;
-      align-items: center;
-
-      border: 0;
-      border-radius: 0.5rem;
-      background: #feee03;
-      color: #060d0e;
-
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-      transition: filter 0.25s ease;
-
-      &:hover {
-        filter: opacity(0.75);
-      }
-    }
+  hr {
+    height: 1px;
+    width: 95%;
+    margin: 1rem auto;
+    border: 0;
+    border-top: 1px solid #242424;
   }
 `;
 

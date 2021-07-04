@@ -5,7 +5,6 @@ export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    outline: 0;
     box-sizing: border-box;
   }
 
@@ -37,6 +36,21 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  ::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient(13deg, #060D0E 21%,#142C30 69%);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background: #142C30;
+    border-radius: 10px;
   }
 
   @media(max-width: 1366px) {

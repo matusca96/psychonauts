@@ -1,5 +1,7 @@
+import { CharacterCard } from '../components/CharacterCard';
 import { Input } from '../components/Input';
 import { Logo } from '../components/Logo';
+import { SearchField } from '../components/SearchField';
 import {
   Container,
   Content,
@@ -8,7 +10,7 @@ import {
   MyFavoritesContainer,
 } from './styles';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <Container>
       <Header>
@@ -16,10 +18,9 @@ export default function Home() {
       </Header>
       <Content>
         <SearchCharacterContainer>
-          <header>
-            <Input placeholder="Digite um nome de personagem" />
-            <button type="button">Pesquisar</button>
-          </header>
+          <SearchField />
+          <hr />
+          <CharacterCard />
         </SearchCharacterContainer>
         <MyFavoritesContainer />
       </Content>

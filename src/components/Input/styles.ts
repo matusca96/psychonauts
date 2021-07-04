@@ -7,8 +7,13 @@ export const Container = styled.div`
   align-items: center;
 
   padding: 0.75rem;
+  border: 2px solid #060d0e;
   border-radius: 0.5rem;
   background: #060d0e;
+
+  &:focus-within {
+    border: 2px solid #feee03;
+  }
 
   & > svg {
     font-size: 2rem;
@@ -22,6 +27,7 @@ export const Container = styled.div`
     height: 100%;
     background: transparent;
     border: 0;
+    outline: 0;
 
     font-family: 'Roboto Mono';
     font-size: 1.5rem;
