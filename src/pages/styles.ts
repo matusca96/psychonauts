@@ -62,7 +62,7 @@ export const MyFavoritesContainer = styled.div`
   flex-direction: column;
   overflow-y: auto;
 
-  strong {
+  & > strong {
     font-size: 2.5rem;
     letter-spacing: 0.25rem;
 

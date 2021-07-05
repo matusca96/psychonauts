@@ -46,7 +46,7 @@ export const Container = styled.header<HeaderProps>`
   strong {
     flex: 1;
 
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-transform: capitalize;
     letter-spacing: 0.25rem;
 
@@ -60,5 +60,9 @@ export const Container = styled.header<HeaderProps>`
     font-size: 2.5rem;
 
     align-self: flex-start;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 `;

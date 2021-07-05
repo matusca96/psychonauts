@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.li`
+interface ContainerProps {
+  avatar: string;
+}
+
+export const Container = styled.li<ContainerProps>`
   display: flex;
   align-items: center;
 
@@ -9,12 +13,19 @@ export const Container = styled.li`
 
   background: #142c30;
 
-  img {
-    width: 2.5rem;
+  div {
+    width: 4.5rem;
+    height: 4.5rem;
+
+    background: url(${({ avatar }) => avatar});
+    background-position: 90% 10%;
+    background-size: cover;
+
+    border-radius: 50%;
   }
 
   strong {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     flex: 1;
 
     font-family: 'Roboto Mono';

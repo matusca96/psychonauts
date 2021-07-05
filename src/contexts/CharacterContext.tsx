@@ -5,13 +5,15 @@ interface CharacterContextData {
   searchCharacter: (query: string) => void;
   character: Character;
   isLoading: boolean;
+  notFound: boolean;
+  isInFirstRender: boolean;
 }
 
 interface CharacterProviderProps {
   children: ReactNode;
 }
 
-interface Character {
+export interface Character {
   gender: string;
   img: string;
   _id: string;
@@ -31,12 +33,18 @@ export const CharacterContext = createContext({} as CharacterContextData);
 export function CharacterProvider({
   children,
 }: CharacterProviderProps): JSX.Element {
-  const [character, setCharacter] = useState({} as Character);
+  const [character, setCharacter] = useState({
+    psiPowers: [],
+  } as Character);
   const [isLoading, setIsLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
+  const [isInFirstRender, setIsInFirstRender] = useState(true);
 
   async function searchCharacter(query: string) {
     try {
       setIsLoading(true);
+      setNotFound(false);
+      setIsInFirstRender(false);
       const response = await api.get('characters', {
         params: {
           name: query,
@@ -45,6 +53,8 @@ export function CharacterProvider({
 
       if (response.data) {
         setCharacter(response.data);
+      } else {
+        setNotFound(true);
       }
     } catch (err) {
       console.log(err);
@@ -55,7 +65,13 @@ export function CharacterProvider({
 
   return (
     <CharacterContext.Provider
-      value={{ searchCharacter, character, isLoading }}
+      value={{
+        searchCharacter,
+        character,
+        isLoading,
+        notFound,
+        isInFirstRender,
+      }}
     >
       {children}
     </CharacterContext.Provider>

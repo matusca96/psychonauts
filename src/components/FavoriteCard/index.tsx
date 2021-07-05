@@ -1,14 +1,25 @@
+import { useContext } from 'react';
+import { Character } from '../../contexts/CharacterContext';
+import { FavoritesContext } from '../../contexts/FavoritesContext';
 import { Container } from './styles';
 
-export function FavoriteCard(): JSX.Element {
+interface FavoriteCardProps {
+  character: Character;
+}
+
+export function FavoriteCard({ character }: FavoriteCardProps): JSX.Element {
+  const { removeFavoriteCharacter } = useContext(FavoritesContext);
+
   return (
-    <Container>
-      <img
-        src="https://psychonauts-api.herokuapp.com/images/api/characters/razputin-aquato.png"
-        alt="Avatar"
-      />
-      <strong>razputin aquato</strong>
-      <button type="button">Remover</button>
+    <Container avatar={character.img}>
+      <div />
+      <strong>{character.name}</strong>
+      <button
+        type="button"
+        onClick={() => removeFavoriteCharacter(character._id)}
+      >
+        Remover
+      </button>
     </Container>
   );
 }

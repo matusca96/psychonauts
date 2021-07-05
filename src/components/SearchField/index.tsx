@@ -1,4 +1,5 @@
-import { KeyboardEvent, useContext, useState } from 'react';
+import { useEffect, KeyboardEvent, useContext, useState } from 'react';
+
 import { CharacterContext } from '../../contexts/CharacterContext';
 import { Input } from '../Input';
 import { Container } from './styles';
@@ -6,7 +7,14 @@ import { Container } from './styles';
 export function SearchField(): JSX.Element {
   const [query, setQuery] = useState('');
 
-  const { searchCharacter, isLoading } = useContext(CharacterContext);
+  const { searchCharacter, character, isLoading } =
+    useContext(CharacterContext);
+
+  useEffect(() => {
+    if (Object.keys(character).length !== 0) {
+      setQuery('');
+    }
+  }, [character]);
 
   function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter') {
