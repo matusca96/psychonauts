@@ -14,7 +14,7 @@ import {
   Header,
   SearchCharacterContainer,
   MyFavoritesContainer,
-} from './styles';
+} from '../styles/pages/Home/styles';
 import { Welcome } from '../components/utils/Welcome';
 import { EmptyFavorites } from '../components/utils/EmptyFavorites';
 
