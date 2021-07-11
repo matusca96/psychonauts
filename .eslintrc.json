@@ -30,6 +30,7 @@
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "no-plusplus": [
       2,
       {
@@ -51,6 +52,12 @@
       }
     ],
     "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": [
       "error"

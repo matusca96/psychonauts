@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useState } from 'react';
-import { api } from '../api/services';
+import { api } from '../services/api';
 
 interface CharacterContextData {
   searchCharacter: (query: string) => void;

@@ -17,32 +17,15 @@ interface InputProps
   onClear: () => void;
 }
 
-const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { onClear, onKeyDown, value, ...rest },
-  ref,
-): JSX.Element => {
+export function Input({ onClear, value, ...rest }: InputProps): JSX.Element {
   const [isFocused, setIsFocused] = useState(false);
-
-  const onFocus = () => setIsFocused(true);
-  const onBlur = () => setIsFocused(false);
-
-  function handleOnKeyDown(e: KeyboardEvent<HTMLInputElement>) {
-    if (e.key !== 'Enter') {
-      return;
-    }
-
-    onKeyDown(e);
-    onBlur();
-  }
 
   return (
     <Container isFocused={isFocused}>
       <IoSearch />
       <input
-        ref={ref}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onKeyDown={(e) => handleOnKeyDown(e)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
         value={value}
         type="text"
         {...rest}
@@ -54,6 +37,4 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       )}
     </Container>
   );
-};
-
-export const Input = forwardRef(InputBase);
+}
