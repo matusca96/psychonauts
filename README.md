@@ -1,5 +1,7 @@
 Aplicação criada para pesquisar os personagens mais conhecidos do jogo Psychonauts, foi desenvolvida utilizando ReactJS, Next.js, styled-components, dentre outras bibliotecas.
 
+[LIVE DEMO](https://psychonauts.vercel.app/)
+
 Para rodar a aplicação, clone este repositório, acesse a pasta do projeto e rode ```yarn``` ou ```npm install``` para instalar as dependências e por fim, ```yarn dev``` ou ```npm run dev``` para subir a aplicação.
 
 Para rodas os testes, utilizar o comando ```yarn jest```.
