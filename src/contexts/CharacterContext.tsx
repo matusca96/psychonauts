@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useState } from 'react';
-import { api } from '../services/api';
+import axios from 'axios';
 
 interface CharacterContextData {
   searchCharacter: (query: string) => void;
@@ -45,7 +45,7 @@ export function CharacterProvider({
       setIsLoading(true);
       setNotFound(false);
       setIsInFirstRender(false);
-      const response = await api.get('characters', {
+      const response = await axios.get('/api/characters', {
         params: {
           name: query,
         },
